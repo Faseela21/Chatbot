@@ -1,6 +1,0 @@
-python
-nltk
-Flask
-numpy
-sklearn
-
