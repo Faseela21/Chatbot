@@ -1,0 +1,167 @@
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color:   #e6f2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+   
+}
+
+.chat-container {
+    
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+    width: 500px;
+    max-width: 100%;
+    
+    background: linear-gradient(135deg, rgb(80, 80, 219) 0%, rgb(102, 179, 198) 100%)
+
+    
+    
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; 
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#chat-box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background-color:  #d7e6f5;;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+
+#chat-log {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.user-message, .bot-message {
+    padding: 12px 18px;
+    border-radius: 25px; /* Makes the message bubble oval-shaped */
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 75%;
+    word-wrap: break-word;
+    position: relative; /* To position the message "tail" */
+    animation: fadeIn 0.5s ease;
+    color: rgb(255, 255, 255);
+}
+
+.user-message {
+    background: linear-gradient(135deg, rgb(95, 95, 161) 0%, rgb(106, 173, 190) 100%);
+    align-self: flex-end;
+    border-left: none;
+    margin-left: 0;
+    border-radius: 25px 25px 0 25px; /* Custom rounded corners */
+}
+
+.bot-message {
+    background: linear-gradient(135deg, rgb(95, 95, 161) 0%, rgb(106, 173, 190) 100%);
+
+    align-self: flex-start;
+    border-left: none;
+    margin-right: 0;
+    border-radius: 25px 25px 25px 0; /* Custom rounded corners */
+}
+
+/* Optional message tail (for user-message and bot-message) */
+.user-message:after, .bot-message:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.user-message:after {
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #e0f7fa; /* Matches the user message background */
+}
+
+.bot-message:after {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #e3f2fd transparent transparent; /* Matches the bot message background */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+   
+    padding: 14px 16px;
+    border: 1px solid #e3e3fe;
+    border-radius: 8px;
+    margin-right: 12px;
+    font-size: 15px;
+    color: #ffffff;
+    box-shadow: 0 2px 6px #90a7d9;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgb(80, 80, 219) 0%, rgb(102, 179, 198) 100%)
+
+}
+
+
+input::placeholder {
+    color: #ffffff; 
+    opacity: 1; 
+}
+
+button {
+    background: linear-gradient(135deg, rgb(80, 80, 219) 0%, rgb(102, 179, 198) 100%);
+
+    border: none;
+    border-radius: 38%; /* Makes it circular */
+    cursor: pointer;
+    width: 50px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+   
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+button:active {
+    transform: translateY(1px); /* Downward movement on click */
+}
